@@ -43,7 +43,7 @@ public class Frequencia {
 	@JoinColumn(name = "id_matricula")
 	private Matricula matricula;
 	
-	@Column(name = "frequencia")
+	@Column(name = "frequencias")
 	@Enumerated(value = EnumType.STRING)
 	private TipoFrequencia frequencia;
 	

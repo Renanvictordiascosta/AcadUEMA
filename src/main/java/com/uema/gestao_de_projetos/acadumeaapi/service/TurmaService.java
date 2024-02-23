@@ -15,6 +15,6 @@ public interface TurmaService {
 	Optional <Turma > obterporId(Long id);
 	List<Turma > buscarTurma (Turma  turmafiltro) ;
 	void atualizarStatusTurma ( Turma  turma,StatusTurma status);
-	
+	boolean temTurmaSobrepostaParaAvaliador(Turma turma);
 	
 }

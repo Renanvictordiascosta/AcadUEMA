@@ -1,8 +1,10 @@
 package com.uema.gestao_de_projetos.acadumeaapi.service;
 
 import java.time.LocalDate;
-
+import static org.assertj.core.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.test.context.ActiveProfiles;
@@ -39,6 +41,26 @@ public class AlunoServiceTest {
 	@MockBean
 	AlunoRepository repository;
 	
+	@Test
+	public void deveSalvarAluno()
+	{
+		//cenario
+		Mockito.doNothing().when(service).validarCpf(Mockito.anyString());
+		Aluno aluno = criarAluno();
+		Mockito.when(repository.save(Mockito.any(Aluno.class))).thenReturn(aluno);
+		
+		//acao 
+		Aluno salvo = service.salvarAluno(new Aluno());
+		//verificacao
+		assertThat(salvo).isNotNull();
+		assertThat(salvo.getId()).isEqualTo(1l);
+		assertThat(salvo.getNome()).isEqualTo("aluno teste");
+		assertThat(salvo.getEmail()).isEqualTo("alunotest@exemplo.com");
+		assertThat(salvo.getCpf()).isEqualTo("72244178234");
+		
+		
+		
+	}
 	
 	
 }

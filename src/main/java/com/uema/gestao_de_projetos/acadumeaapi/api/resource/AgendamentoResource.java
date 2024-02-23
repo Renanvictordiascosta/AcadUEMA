@@ -144,7 +144,7 @@ public class AgendamentoResource {
 			agendamentoService.deletar(entity);
 return new ResponseEntity(HttpStatus.NO_CONTENT);
 			
-		}).orElseGet( () -> new ResponseEntity("Lancamento não encontrado na Base de Dados", HttpStatus.BAD_REQUEST));
+		}).orElseGet( () -> new ResponseEntity("Agendamento não encontrado na Base de Dados", HttpStatus.BAD_REQUEST));
 	
 	}
 	

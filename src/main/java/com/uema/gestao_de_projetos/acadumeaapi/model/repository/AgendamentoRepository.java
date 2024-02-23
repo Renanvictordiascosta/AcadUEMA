@@ -18,4 +18,5 @@ public interface AgendamentoRepository extends JpaRepository<Agendamento,Long> {
 
 	    @Query("SELECT a FROM Agendamento a WHERE a.funcionario.id = :funcionarioId AND a.horario = :horario AND a.dia = :dia AND a.mes = :mes AND a.ano = :ano")
 	    Optional<Agendamento> findAgendamentoByFuncionarioAndData(@Param("funcionarioId") Long funcionarioId, @Param("horario") LocalTime horario, @Param("dia") Integer dia, @Param("mes") Integer mes, @Param("ano") Integer ano);
+
 }

@@ -15,5 +15,5 @@ public interface FrequenciaService {
 	void deletar(Frequencia  frequencia);
 	Optional <Frequencia > obterporId(Long id);
 	void atualizarTipoFrequencia ( Frequencia  frequencia,TipoFrequencia status);
-	
+	Long frequenciaPorTipo(TipoFrequencia status,Long idAluno, Long idMatricula);
 }

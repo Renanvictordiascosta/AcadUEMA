@@ -32,9 +32,9 @@ public class Matricula {
 	private Turma turma;
 	@ManyToOne
 	@JoinColumn(name = "id_aluno")
-	private Aluno alunos;
+	private Aluno aluno;
 	
-	@ManyToOne
-	@JoinColumn(name = "id_funcionario")
-	private Funcionario funcionario;
+//	@ManyToOne
+//	@JoinColumn(name = "id_funcionario")
+//	private Funcionario funcionario;
 }

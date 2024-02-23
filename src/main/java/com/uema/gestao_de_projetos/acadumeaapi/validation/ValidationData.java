@@ -1,6 +1,8 @@
 package com.uema.gestao_de_projetos.acadumeaapi.validation;
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+@Component
 public class ValidationData {
 	 public boolean validarData(LocalDate data) {
 	        // Se a data for nula, considere-a inválida

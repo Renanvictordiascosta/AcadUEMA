@@ -14,5 +14,6 @@ public interface MatriculaService {
 	void deletar(Matricula  matricula);
 	Optional <Matricula> obterporId(Long id);
 	List<Matricula> buscarMatricula (Matricula Matriculafiltro) ;
-	
+	boolean temMatriculaparaAlunoNaTurma(Matricula matricula);
+	boolean TemTurmaMatriculadaJa(Long id);
 }
