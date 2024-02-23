@@ -148,7 +148,8 @@ public class AlunoResource {
 	public ResponseEntity buscarAlunos(
 			@RequestParam(value  = "nome", required = false) String nome,
 			@RequestParam(value  = "genero", required = false) String genero,
-			@RequestParam(value  = "tipo", required = false) String tipo	
+			@RequestParam(value  = "tipo", required = false) String tipo,
+			@RequestParam(value  = "status", required = false) String status
 			)
 	{
 		
@@ -158,7 +159,8 @@ public class AlunoResource {
 		alunofiltro.setGenero(TipoGenero.valueOf(genero));}
 		 if (tipo != null && !tipo.isEmpty()) {
 		alunofiltro.setTipo(TipoAluno.valueOf(tipo));}
-		
+		 if (status != null && status.isEmpty()){
+		alunofiltro.setStatus(TipoStatusPessoa.valueOf(status));}
 		List<Aluno> alunos = service.buscarAlunos(alunofiltro);
 		return ResponseEntity.ok(alunos);
 		}
