@@ -4,6 +4,8 @@ import LocalStorageService from "../service/localstorageService";
 import { AuthContext } from '../main/provetorAutenticacao'
 import Card from "../components/card";
 import "../decoração/login.css"
+import logo from '../imagens/1.png'
+import logo2 from '../imagens/3.png'
 const RecepcaoPage = () => {
     const context = useContext(AuthContext);
 
@@ -25,10 +27,10 @@ const RecepcaoPage = () => {
     const usuarioLogado = LocalStorageService.obterItem('_usuario_logado');
 
     return (
-        <Card title={`Bem Vindo ${usuarioLogado.nome} a Seção da Receção`}>
-            <div className="container text-center">
-                <div className='' style={{ margin: '5%' }}>
-                    <h4>Clique em um dos botão abaixo para acessar ao sistema:</h4> <br />
+        <Card title={`Bem Vindo ${usuarioLogado.nome} ao Menu Inicial`}>
+            <div className='' >
+                <div className='text-center' style={{ margin: '5%' }}>
+                    <h4>Clique em um dos botão abaixo para comecar a acessar o sistema:</h4> <br />
                 </div>
 
                 <div className='row' style={{ margin: '2%' }} >
@@ -66,7 +68,6 @@ const RecepcaoPage = () => {
 
             </div>
         </Card>
-
     );
 }
 export default RecepcaoPage;

@@ -212,7 +212,7 @@ const CadastroAgendamento = ({ }) => {
                     modal={true}
                     onHide={() => setShowConfirmDialog(false)}
                 >
-                    Confirma o Agendamento para esse do Aluno para este  Funcionario?
+                    Confirma o Agendamento desse Aluno para este Funcionario?
                 </Dialog>
             </div>
         </Card>

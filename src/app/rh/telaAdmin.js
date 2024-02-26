@@ -22,10 +22,10 @@ const AdminPage = () => {
     const usuarioLogado = LocalStorageService.obterItem('_usuario_logado');
 
     return (
-        <Card title={`Bem Vindo ${usuarioLogado.nome} a Seção da Admin`}>
+        <Card title={`Bem Vindo ${usuarioLogado.nome} a Seção dos Recursos Humanos `}>
             <div className="container text-center">
                 <div className='' style={{ margin: '5%' }}>
-                    <h4>Clique em um dos botão abaixo para acessar ao sistema:</h4> <br />
+                    <h4>Clique em um dos botão abaixo para comecar a acessar o sistema:</h4> <br />
                 </div>
 
                 <div className='row' style={{ margin: '2%' }} >

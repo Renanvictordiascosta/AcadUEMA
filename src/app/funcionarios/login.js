@@ -58,7 +58,7 @@ function Login() {
 
     return (
 
-        <div className="row  row-cols-1">
+        <div className="row  row-cols">
             <div className="col-sm-2 offset-sm-5" >
                 <img src={logo} style={{ width: '100%', height: '100%' }} />
             </div>

@@ -6,7 +6,7 @@ const AlunoTable = ({ alunos, editAction, deleteAction , agendamentoAction}) => 
             <thead>
                 <tr>
                     <th scope="col">Nome</th>
-                    <th scope="col">Email</th>
+                    {/* <th scope="col">Email</th> */}
                     <th scope="col">CPF</th>
                     <th scope="col">Telefone</th>
                     <th scope="col">Gênero</th>
@@ -18,7 +18,7 @@ const AlunoTable = ({ alunos, editAction, deleteAction , agendamentoAction}) => 
                 {alunos.map((aluno) => (
                     <tr key={aluno.id}>
                         <td>{aluno.nome}</td>
-                        <td>{aluno.email}</td>
+                        {/* <td>{aluno.email}</td> */}
                         <td>{aluno.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')}</td>
                         <td>{aluno.telefone.replace(/(\d{2})(\d{5})(\d{4})/, '($1)$2-$3')}</td>
                         <td>{aluno.genero}</td>
