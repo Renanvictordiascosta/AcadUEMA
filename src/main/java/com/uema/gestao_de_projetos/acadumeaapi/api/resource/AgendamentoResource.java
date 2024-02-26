@@ -23,6 +23,7 @@ import com.uema.gestao_de_projetos.acadumeaapi.exception.RegraNegocioException;
 import com.uema.gestao_de_projetos.acadumeaapi.model.entity.Agendamento;
 import com.uema.gestao_de_projetos.acadumeaapi.model.entity.Aluno;
 import com.uema.gestao_de_projetos.acadumeaapi.model.entity.Funcionario;
+import com.uema.gestao_de_projetos.acadumeaapi.model.enums.TipoAluno;
 import com.uema.gestao_de_projetos.acadumeaapi.model.enums.TipoFuncionario;
 import com.uema.gestao_de_projetos.acadumeaapi.model.enums.TipoStatusAgendamento;
 import com.uema.gestao_de_projetos.acadumeaapi.model.enums.TipoStatusPessoa;
@@ -87,6 +88,8 @@ public class AgendamentoResource {
 			filtro.setAlunos(alunofiltro.get());
 		}
 		
+//		 if (tipo != null && !tipo.isEmpty()) {
+//				filtro.setFuncionario(null);}
 		Optional<Funcionario> funcionariofiltro = funcionarioService.obterPorCpf(funcionario);
 		if(funcionariofiltro.isPresent())
 		{
@@ -109,7 +112,7 @@ public class AgendamentoResource {
 		   {
 			   return ResponseEntity.badRequest().body("Aluno está com Cadastro Cancelado , Não é possivel fazer agendamentos!");
 		   }
-		   if(entidade.getFuncionario().getTipo() == TipoFuncionario.OUTROS)
+		   if(entidade.getFuncionario().getTipo() == TipoFuncionario.OUTROS || entidade.getFuncionario().getTipo() == TipoFuncionario.RECEPCAO)
 		   {
 			   return ResponseEntity.badRequest().body("Funcionario não pode receber Consultas e Agendamentos.");
 		   }

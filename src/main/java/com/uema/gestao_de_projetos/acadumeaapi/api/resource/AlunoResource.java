@@ -144,6 +144,16 @@ public class AlunoResource {
 		
 	}
 	
+	@GetMapping("/buscarporId")
+	public ResponseEntity buscarAlunoporId(@RequestParam(value  = "id") Long id)
+	{
+
+		return service.obterporId(id).map(entity -> {
+			
+			return ResponseEntity.ok(entity);
+		}).orElseThrow( () -> new RegraNegocioException("Aluno não encontrado para o CPF informado!"));
+		
+	}
 	@GetMapping("/buscarAlunos")
 	public ResponseEntity buscarAlunos(
 			@RequestParam(value  = "nome", required = false) String nome,

@@ -212,6 +212,17 @@ public class FuncionarioResource {
 		
 		}
 		
+		@GetMapping("/buscarporId")
+		public ResponseEntity buscarAlunoporId(@RequestParam(value  = "id") Long id)
+		{
+
+			return service.obterPorId(id).map(entity -> {
+				
+				return ResponseEntity.ok(entity);
+			}).orElseThrow( () -> new RegraNegocioException("Aluno não encontrado para o CPF informado!"));
+			
+		}
+		
 		
 		
 		
