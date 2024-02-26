@@ -1,22 +1,24 @@
-import Login from "./páginas/login";
-import Cadastroaluno from "./páginas/cadastro_aluno";
-import Cadastrofuncionario from "./páginas/cadastro_funcionario";
-import Agendamentoavaliadorfisico from "./páginas/agendamento_avaliadorfisico";
-import Agendamentonutricionista from "./páginas/agendamento_nutricionista";
-import Exclusaofuncionario from "./páginas/exclusao_funcionario";
-import Exclusaoaluno from "./páginas/exclusao_aluno";
-import Confirmarconsultanutricionista from "./páginas/cadastrar_consulta_nutricionista";
-import Confirmarconsultaavaliador from "./páginas/cadastrar_consulta_avaliadorfisico";
-import Controleconsultasaluno from "./páginas/controle_consulta_aluno";
-import "./App.css";
+import React from "react";
+import Rotas from './app/main/rotas'
+import ProvedorAutenticacao from "./app/main/provetorAutenticacao";
 
-function App() {
-  
- return (
-  <div className="App">
-  <Login />
-  </div>
-  );
+import 'toastr/build/toastr.min'
+
+import 'bootswatch/dist/flatly/bootstrap.css'
+import 'toastr/build/toastr.css'
+
+import "./App.css";
+import "./app/decoração/login.css"
+class App extends React.Component {
+  render(){
+    return(
+      <ProvedorAutenticacao>
+        <div className="container">    
+            <Rotas />
+        </div>
+      </ProvedorAutenticacao>
+    )
+  }
 }
 
 export default App;
